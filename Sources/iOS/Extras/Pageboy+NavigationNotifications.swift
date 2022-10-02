@@ -22,11 +22,13 @@ extension PageboyViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(previousPage(_:)), name: .previousPage, object: nil)
     }
     
-    @objc private func nextPage(_ sender: Notification) {
+    @objc(nextPageWithNotification:)
+    private func nextPage(_ notification: Notification) {
         scrollToPage(.next, animated: true)
     }
     
-    @objc private func previousPage(_ sender: Notification) {
+    @objc(previousPageWithNotification:)
+    private func previousPage(_ notification: Notification) {
         scrollToPage(.previous, animated: true)
     }
 }
